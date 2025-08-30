@@ -1,0 +1,60 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Organization {
+  id               String   @id @default(uuid())
+  organizationName String
+  organizationType String
+  address          String
+  phone            String
+  email            String
+  manager          String?
+  createdAt        DateTime @default(now())
+}
+
+model Parent {
+  id            String   @id @default(uuid())
+  lastName      String
+  firstNames    String
+  address       String
+  phone         String
+  email         String
+  childrenCount String?
+  createdAt     DateTime @default(now())
+}
+
+model Professional {
+  id         String   @id @default(uuid())
+  lastName   String
+  firstNames String
+  specialty  String
+  address    String
+  phone      String
+  email      String
+  createdAt  DateTime @default(now())
+}
+
+model School {
+  id         String   @id @default(uuid())
+  schoolName String
+  schoolType String
+  address    String
+  phone      String
+  email      String
+  manager    String?
+  createdAt  DateTime @default(now())
+}
+
+model Testimonial {
+  id          String   @id @default(uuid())
+  name        String
+  role        String?
+  testimonial String
+  createdAt   DateTime @default(now())
+}

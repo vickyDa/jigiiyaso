@@ -1,0 +1,3 @@
+DATABASE_URL="mysql://jigiiyaso_user:JigiMysql2025!@localhost:3306/jigiiyaso_db"
+NODE_ENV=production
+PORT=3000
