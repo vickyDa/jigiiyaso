@@ -44,7 +44,7 @@ export default function Footer() {
                         <div className="space-y-2 text-green-200">
                             <div className="flex items-center">
                                 <Mail className="w-4 h-4 mr-2" />
-                                <span>contact@jigiyaso.sn</span>
+                                <span>jigiyaso.lme@gmail.com</span>
                             </div>
                             <div className="flex items-center">
                                 <Phone className="w-4 h-4 mr-2" />
@@ -76,7 +76,7 @@ export default function Footer() {
 
                 {/* Footer Bottom */}
                 <div className="border-t border-green-700 mt-8 pt-8 text-center text-green-200">
-                    <p>&copy; {currentYear} Jigiya So. Tous droits réservés.</p>
+                    <p>&copy; {currentYear} Jigiya Sô. Tous droits réservés.</p>
                     <div className="mt-2 space-x-4">
                         <a href="#" className="hover:text-white transition-colors">
                             Mentions légales
