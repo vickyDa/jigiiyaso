@@ -22,9 +22,11 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { parentSchema, ParentFormData } from '@/types/validations/parentSchema'
 import { useState } from 'react'
 import { toast } from 'sonner'
+import { useRouter } from 'next/navigation'
 
 export default function ParentForm() {
     const [loading, setLoading] = useState(false)
+    const router = useRouter()
 
     const {
         register,
@@ -49,6 +51,7 @@ export default function ParentForm() {
             if (result.success) {
                 toast.success('Parent inscrit avec succès !')
                 reset()
+                router.refresh()
             } else {
                 toast.error('Erreur lors de l’inscription.')
             }

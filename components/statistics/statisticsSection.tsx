@@ -33,7 +33,7 @@ export default function StatisticsSection() {
     fetchStats();
   }, []);
 
-  if (!registrationCounts) {
+  if (!registrationCounts || Number.isNaN(registrationCounts)) {
     return (
       <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white/30 backdrop-blur-sm">
         {/* <p className="text-center text-gray-600">Chargement des statistiques...</p> */}
@@ -46,6 +46,8 @@ export default function StatisticsSection() {
     registrationCounts.professionals +
     registrationCounts.schools +
     registrationCounts.organizations;
+
+    console.log(" totalRegistrations ... ", totalRegistrations);
 
     const stats = [
         {

@@ -16,9 +16,11 @@ import { toast } from 'sonner'
 import {
     professionalSchema, ProfessionalFormData
 } from '@/types/validations/professionalSchema'
+import { useRouter } from 'next/navigation'
 
 export default function ProfessionalForm() {
     const [loading, setLoading] = useState(false)
+    const router = useRouter()
 
     const {
         register,
@@ -43,6 +45,7 @@ export default function ProfessionalForm() {
             if (result.success) {
                 toast.success('Professionnel inscrit avec succès !')
                 reset()
+                router.refresh()
             } else {
                 toast.error('Erreur lors de l’inscription.')
             }
