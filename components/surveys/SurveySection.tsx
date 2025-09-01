@@ -31,7 +31,7 @@ export default function SurveySection() {
                             description="Aidez-nous à mieux comprendre vos besoins et attentes"
                             content="Votre participation nous permettra de créer une plateforme qui répond vraiment à vos besoins."
                             buttonColor="bg-green-600 hover:bg-green-700"
-                            link="https://docs.google.com/forms/d/1fkTXQnyD30qokzzGcVyY51iW6s4x4LLmf-hnqYgSWxk/edit?ts=682a1955"
+                            link="https://forms.gle/jEpR3YLxFcDNw8Tq9"
                         />
                     </motion.div>
 
@@ -42,7 +42,7 @@ export default function SurveySection() {
                             description="Partagez votre expertise pour améliorer notre plateforme"
                             content="Votre expérience professionnelle est précieuse pour construire un outil efficace."
                             buttonColor="bg-green-500 hover:bg-green-600"
-                            link="https://docs.google.com/forms/d/1fkTXQnyD30qokzzGcVyY51iW6s4x4LLmf-hnqYgSWxk/edit?ts=682a1955"
+                            link="https://forms.gle/x7GiYFAPueR3pDiE7"
                         />
                     </motion.div>
                 </div>
