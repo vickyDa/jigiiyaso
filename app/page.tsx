@@ -9,6 +9,7 @@ import SurveySection from "@/components/surveys/SurveySection";
 import Footer from "@/components/Footer";
 import StatisticsSection from "@/components/statistics/StatisticsSection";
 
+// repsuh
 export default function Page() {
   return (
       <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-green-100">
