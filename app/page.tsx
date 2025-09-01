@@ -7,6 +7,7 @@ import RegistrationSection from "@/components/registrations/RegistrationSection"
 import TestimonialSection from "@/components/testimonials/TestimonialSection";
 import SurveySection from "@/components/surveys/SurveySection";
 import Footer from "@/components/Footer";
+import StatisticsSection from "@/components/statistics/statisticsSection";
 
 export default function Page() {
   return (
@@ -19,6 +20,9 @@ export default function Page() {
 
         {/* Mission & Vision */}
         <MissionSection />
+
+        {/* Statistic section */}
+        <StatisticsSection/>
 
         {/* Registration Forms */}
         <RegistrationSection />
