@@ -7,7 +7,7 @@ import RegistrationSection from "@/components/registrations/RegistrationSection"
 import TestimonialSection from "@/components/testimonials/TestimonialSection";
 import SurveySection from "@/components/surveys/SurveySection";
 import Footer from "@/components/Footer";
-import StatisticsSection from "@/components/statistics/statisticsSection";
+import StatisticsSection from "@/components/statistics/StatisticsSection";
 
 export default function Page() {
   return (

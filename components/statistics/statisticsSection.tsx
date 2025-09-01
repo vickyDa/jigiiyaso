@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { TrendingUp, Users, Stethoscope, GraduationCap, Building2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { staggerChildren, fadeInUp } from "@/lib/animations";
-import StatisticsFooter from "./statisticsFooter";
 import StatisticCard from "./StatisticsCard";
+import StatisticsFooter from "./StatisticsFooter";
 
 
 interface Stats {
@@ -47,7 +47,6 @@ export default function StatisticsSection() {
     registrationCounts.schools +
     registrationCounts.organizations;
 
-    console.log(" totalRegistrations ... ", totalRegistrations);
 
     const stats = [
         {
