@@ -16,9 +16,11 @@ import { useState } from 'react'
 import {
     schoolSchema, SchoolFormData
 } from '@/types/validations/schoolSchema'
+import { useRouter } from 'next/navigation'
 
 export default function SchoolForm() {
     const [loading, setLoading] = useState(false)
+    const router = useRouter()
 
     const {
         register,
@@ -43,6 +45,7 @@ export default function SchoolForm() {
             if (result.success) {
                 toast.success("Établissement inscrit avec succès !")
                 reset()
+                router.refresh()
             } else {
                 toast.error('Erreur lors de l’inscription.')
             }

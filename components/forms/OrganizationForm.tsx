@@ -25,9 +25,11 @@ import {
     organizationSchema,
     OrganizationFormData,
 } from '@/types/validations/organizationSchema'
+import { useRouter } from 'next/navigation'
 
 export default function OrganizationForm() {
     const [loading, setLoading] = useState(false)
+    const router = useRouter()
 
     const {
         register,
@@ -52,6 +54,7 @@ export default function OrganizationForm() {
             if (result.success) {
                 toast.success('Organisme enregistré avec succès !')
                 reset()
+                router.refresh()
             } else {
                 toast.error('Erreur lors de l’enregistrement.')
             }

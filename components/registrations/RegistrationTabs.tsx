@@ -11,6 +11,7 @@ import ParentForm from "@/components/forms/ParentForm";
 import ProfessionalForm from "@/components/forms/ProfessionalForm";
 import SchoolForm from "@/components/forms/SchoolForm";
 import OrganizationForm from "@/components/forms/OrganizationForm";
+import { Building2, GraduationCap, Stethoscope, Users } from 'lucide-react';
 
 
 export default function RegistrationTabs() {
@@ -23,25 +24,25 @@ export default function RegistrationTabs() {
                     value="parent"
                     className="rounded-full data-[state=active]:bg-green-600 data-[state=active]:text-white"
                 >
-                    👪 Parents
+                    <Users className="w-4 h-4 mr-2" /> Parents
                 </TabsTrigger>
                 <TabsTrigger
                     value="professional"
                     className="rounded-full data-[state=active]:bg-green-500 data-[state=active]:text-white"
                 >
-                    🩺 Professionnels
+                    <Stethoscope className="w-4 h-4 mr-2" /> Professionnels
                 </TabsTrigger>
                 <TabsTrigger
                     value="school"
                     className="rounded-full data-[state=active]:bg-green-600 data-[state=active]:text-white"
                 >
-                    🏫 Écoles
+                    <GraduationCap className="w-4 h-4 mr-2" /> Écoles
                 </TabsTrigger>
                 <TabsTrigger
                     value="organization"
                     className="rounded-full data-[state=active]:bg-green-500 data-[state=active]:text-white"
                 >
-                    🏢 Organismes
+                    <Building2 className="w-4 h-4 mr-2" /> Organismes
                 </TabsTrigger>
             </TabsList>
 

@@ -3,12 +3,38 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {useEffect, useState} from "react";
+import Newsletter from "./forms/NewsLetterForm";
+import NewsLetterForm from "./forms/NewsLetterForm";
 
 export default function Footer() {
     const [currentYear, setCurrentYear] = useState(2025);
     useEffect(() => {
         setCurrentYear(new Date().getFullYear());
     }, []);
+
+    const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      if (res.ok) {
+        setMessage("✅ Merci ! Vous êtes inscrit à la newsletter.");
+        setEmail("");
+      } else {
+        const { error } = await res.json();
+        setMessage("❌ Erreur: " + error);
+      }
+    } catch (err) {
+      setMessage("⚠️ Une erreur est survenue.");
+    }
+  }
     return (
         <footer className="bg-green-900 text-white py-12 px-4">
             <div className="container mx-auto max-w-6xl">
@@ -44,7 +70,7 @@ export default function Footer() {
                         <div className="space-y-2 text-green-200">
                             <div className="flex items-center">
                                 <Mail className="w-4 h-4 mr-2" />
-                                <span>contact@jigiyaso.sn</span>
+                                <span>jigiyaso.lme@gmail.com</span>
                             </div>
                             <div className="flex items-center">
                                 <Phone className="w-4 h-4 mr-2" />
@@ -58,7 +84,8 @@ export default function Footer() {
                     </div>
 
                     {/* Newsletter */}
-                    <div>
+                    <NewsLetterForm/>
+                    {/* <div>
                         <h4 className="text-lg font-semibold mb-4">Newsletter</h4>
                         <p className="text-green-200 mb-4">Restez informé de nos actualités</p>
                         <div className="flex">
@@ -71,17 +98,17 @@ export default function Footer() {
                                 <Mail className="w-4 h-4" />
                             </Button>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Footer Bottom */}
                 <div className="border-t border-green-700 mt-8 pt-8 text-center text-green-200">
-                    <p>&copy; {currentYear} Jigiya So. Tous droits réservés.</p>
+                    <p>&copy; {currentYear} Jigiya Sô. Tous droits réservés.</p>
                     <div className="mt-2 space-x-4">
-                        <a href="#" className="hover:text-white transition-colors">
+                        <a href="/mentions-legales" className="hover:text-white transition-colors">
                             Mentions légales
                         </a>
-                        <a href="#" className="hover:text-white transition-colors">
+                        <a href="/politique-confidentialite" className="hover:text-white transition-colors">
                             Politique de confidentialité
                         </a>
                     </div>
